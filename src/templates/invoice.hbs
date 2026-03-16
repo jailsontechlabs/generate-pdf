@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>{{title}}</title>
+<style>{{{_styles}}}</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="title">{{title}}</div>
+        <div class="subtitle">Invoice • {{invoiceNumber}}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="color:var(--text-gray)">{{clientName}}</div>
+        <div style="color:var(--text-gray)">{{date}}</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <table style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr style="text-align:left;color:var(--text-gray)"><th>Description</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+          {{#each items}}
+            <tr style="border-top:1px solid #222"><td>{{desc}}</td><td>{{qty}}</td><td>{{price}}</td><td>{{total}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="text-align:right">
+      <div style="font-weight:700; font-size:16px">Total: {{total}}</div>
+    </div>
+
+    <div class="footer">AI Dealt • Payment due: {{dueDate}}</div>
+  </div>
+</body>
+</html>
