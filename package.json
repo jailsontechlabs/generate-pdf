@@ -1,0 +1,18 @@
+{
+  "name": "pdf-generator",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^8.1.0",
+    "fastify": "^4.21.0",
+    "handlebars": "^4.7.7",
+    "playwright": "^1.45.0",
+    "dotenv": "^16.0.0",
+    "fs-extra": "^11.1.1",
+    "dompurify": "^3.0.6",
+    "jsdom": "^22.1.0"
+  }
+}
