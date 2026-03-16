@@ -1,0 +1,58 @@
+:root{
+  --dark-bg: #000000;
+  --card-bg: #181B20;
+  --gold-light: #FCF6BA;
+  --gold-dark: #D4AF37;
+  --text-white: #F9FAFB;
+  --text-gray: #A0A0A0;
+  --red-alert: #FF3B30;
+}
+
+/* font-face apontando para o arquivo que estará no repo (assets/fonts) */
+@font-face {
+  font-family: 'InterLocal';
+  src: url('file:///app/assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'InterLocal';
+  src: url('file:///app/assets/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+*{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body{
+  background: var(--dark-bg);
+  color: var(--text-white);
+  font-family: 'InterLocal', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 0; padding: 0;
+}
+
+.container{
+  max-width: 840px;
+  margin: 28px auto;
+  padding: 24px;
+}
+
+.header{
+  display:flex; justify-content:space-between; align-items:center; padding:12px 0;
+}
+
+.title{ color: var(--gold-dark); font-size:26px; font-weight:700 }
+.subtitle{ color: var(--text-gray); font-size:12px }
+
+.card{ background: var(--card-bg); padding:18px; border-radius:10px; margin-bottom:14px }
+
+.kv{ display:flex; justify-content:space-between; padding:8px 0 }
+.kv .k{ color: var(--text-gray); font-size:12px }
+.kv .v{ color: var(--text-white); font-weight:600 }
+
+.section-title{ color: var(--gold-light); font-weight:700; margin-bottom:8px }
+
+.footer{ color: var(--text-gray); font-size:11px; padding-top:12px }
+
+/* print page rules */
+@page { size: A4; margin: 20mm }
