@@ -82,10 +82,29 @@ https://SEU_USER-SEU_SPACE.hf.space
 
 ```bash
 curl -X POST https://SEU_USER-SEU_SPACE.hf.space/render \
-  -H "Authorization: Bearer sk-suachave123" \
+  -H "Authorization: Bearer SUA_API_SECRET" \
   -H "Content-Type: application/json" \
   -d '{"html": "<!DOCTYPE html><html><body><h1>Ola</h1></body></html>", "filename": "meu-pdf"}' \
   --output meu-pdf.pdf
+```
+
+### Exemplo com HTML completo (dark background, fontes Google)
+
+```bash
+curl -X POST https://SEU_USER-SEU_SPACE.hf.space/render \
+  -H "Authorization: Bearer SUA_API_SECRET" \
+  -H "Content-Type: application/json" \
+  -d @- << 'EOF'
+{
+  "html": "<!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap\" rel=\"stylesheet\"><style>*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#0a0a0a;color:#fff;font-family:Inter,sans-serif;padding:40mm}</style></head><body><h1 style=\"color:#f97316\">Seu Título</h1><p>Conteúdo do documento aqui.</p></body></html>",
+  "filename": "documento-dark",
+  "marginTop": "15mm",
+  "marginBottom": "15mm",
+  "marginLeft": "15mm",
+  "marginRight": "15mm"
+}
+EOF
+  --output documento-dark.pdf
 ```
 
 ### No N8N
